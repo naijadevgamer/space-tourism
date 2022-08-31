@@ -1,0 +1,114 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.crew {
+  width: 100%;
+  position: relative;
+  display: flex;
+  transition: all 0.5s;
+  @include respond(tab-port) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__role {
+    margin: 15.4rem 0 1.5rem 0;
+    opacity: 0.5;
+    @include respond(tab-land) {
+      margin-top: 20rem;
+      margin-bottom: 0.8rem;
+    }
+    @include respond(phone) {
+      order: 2;
+      font-size: 2rem !important;
+      margin-top: 0;
+    }
+  }
+  &__content {
+    width: 50%;
+    @include respond(tab-port) {
+      width: 45.8rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      max-width: 100%;
+      order: 2;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__name {
+    margin-bottom: 2.7rem;
+    @include respond(tab-port) {
+      margin-bottom: 1.6rem;
+    }
+    @include respond(phone) {
+      order: 3;
+      font-size: 2.8rem !important;
+    }
+  }
+  &__bio {
+    margin-bottom: 12rem;
+    width: 44.4rem;
+    @include respond(tab-land) {
+      margin-bottom: 6rem;
+      width: 100%;
+    }
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
+    @include respond(phone) {
+      order: 4;
+      margin-bottom: 10.4rem;
+    }
+  }
+  &__dot-container {
+    width: 13.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respond(tab-port) {
+      justify-content: center;
+      column-gap: 1.6rem;
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+    @include respond(phone) {
+      order: 1;
+      margin-bottom: 3.6rem;
+    }
+    .active {
+      opacity: 1;
+    }
+  }
+  &__dot {
+    border-radius: 50%;
+    background-color: $color-white;
+    opacity: 0.2;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__image {
+    width: 50%;
+    transition: all 0.5s;
+    @include respond(tab-land) {
+      border-bottom: 1px solid rgba($color-white, 0.25);
+    }
+    @include respond(tab-port) {
+      width: 45.8rem;
+      margin-bottom: -4rem;
+    }
+    @include respond(phone) {
+      order: 1;
+      width: 100%;
+      padding: 0 30%;
+      display: block;
+      margin: 3.6rem 0;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.tech-page {
+  background-image: url(../../assets/technology/background-technology-desktop.jpg);
+  padding: 21.2rem 0rem 11rem 12rem;
+  @include background;
+  @include respond(tab-land) {
+    padding: 21.2rem 0rem 6rem 8rem;
+  }
+  @include respond(tab-port) {
+    padding: 13.6rem 0rem 6rem 0;
+    background-image: url(../../assets/technology/background-technology-tablet.jpg);
+  }
+  @include respond(phone) {
+    padding: 88px 0 4rem 0;
+    background-image: url(../../assets/technology/background-technology-mobile.jpg);
+  }
+  .subheader {
+    @include respond(tab-port) {
+      margin-left: 3.85rem;
+    }
+
+    @include respond(phone) {
+      margin-left: 0;
+    }
+  }
+}

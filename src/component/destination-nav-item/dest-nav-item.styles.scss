@@ -1,0 +1,63 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.destination {
+  &__nav-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    color: $color-secondary;
+    letter-spacing: 0.27rem;
+    text-transform: uppercase;
+    font-family: "Barlow Condensed", sans-serif;
+    line-height: 3.2rem;
+    cursor: pointer;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 3.6rem;
+      @include respond(phone) {
+        margin-right: 2.6rem;
+      }
+    }
+  }
+
+  &__nav-line-h {
+    position: absolute;
+    bottom: -1rem;
+    height: 2px;
+    width: 100%;
+    background-color: $color-white;
+    border-radius: 3rem;
+    opacity: 0;
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
+  }
+  &__nav-line,
+  &__nav-line-h {
+    position: absolute;
+    bottom: -1rem;
+    height: 2px;
+    width: 100%;
+    background-color: $color-white;
+    border-radius: 3rem;
+    opacity: 1;
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
+  }
+  &__nav-line {
+    z-index: 1;
+  }
+  &__nav-line-h {
+    opacity: 0;
+  }
+  &__nav-item-name:hover ~ &__nav-line-h {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .color {
+    color: $color-white !important;
+  }
+}

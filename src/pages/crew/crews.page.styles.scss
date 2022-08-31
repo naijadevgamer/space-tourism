@@ -1,0 +1,64 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.crews-page {
+  color: $color-white;
+  background-image: url(../../assets/crew/background-crew-desktop.jpg);
+  padding: 21.2rem 16.5rem 0rem 16.5rem;
+  @include background;
+  overflow-y: hidden;
+
+  @include respond(tab-land) {
+    padding: 21.2rem 6rem 0rem 10rem;
+  }
+  @include respond(tab-port) {
+    padding: 13.6rem 3.85rem 0rem 3.85rem;
+    background-image: url(../../assets/crew/background-crew-tablet.jpg);
+  }
+  @include respond(phone) {
+    padding: 88px 2.4rem 0rem 2.4rem;
+    background-image: url(../../assets/crew/background-crew-mobile.jpg);
+  }
+}
+.crews {
+  width: 100vw;
+  position: relative;
+  &__pointer-wrapper {
+    position: fixed;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__pointer {
+    color: white;
+    opacity: 0;
+    font-size: 8rem;
+    line-height: 0.8;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      transition: opacity 0.4s;
+      opacity: 0.7;
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &--left {
+      margin-left: 2rem;
+    }
+    &--right {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 2rem;
+    }
+  }
+}

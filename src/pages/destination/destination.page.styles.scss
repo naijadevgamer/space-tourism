@@ -1,0 +1,15 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.destination-page {
+  overflow: auto;
+  background-image: url(../../assets/destination/background-destination-desktop.jpg);
+  @include background;
+
+  @include respond(tab-port) {
+    background-image: url(../../assets/destination/background-destination-tablet.jpg);
+  }
+  @include respond(phone) {
+    background-image: url(../../assets/destination/background-destination-mobile.jpg);
+  }
+}

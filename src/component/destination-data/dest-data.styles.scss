@@ -1,0 +1,28 @@
+@import "../../mixin";
+@import "../../typography&variables";
+
+.destination {
+  &__data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respond(tab-port) {
+      justify-content: space-evenly;
+    }
+    @include respond(phone) {
+      flex-direction: column;
+      row-gap: 3.6rem;
+    }
+  }
+  &__distance {
+    margin-right: 7.9rem;
+    @include respond(tab-port) {
+      margin-right: 0;
+    }
+  }
+  &__distance-name,
+  &__travel-time-name {
+    color: $color-secondary;
+    margin-bottom: 1.2rem;
+  }
+}
