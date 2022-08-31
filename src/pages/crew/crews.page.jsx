@@ -12,45 +12,22 @@ const CrewsPage = () => {
   const crewData = DATA.crew;
   const [increment, setIncrement] = useState(0);
 
-  // const handleVisibility = (e) => {
-  //   const target = e.target.parentNode.previousSibling.children[1];
-  //   target.style.display = "flex";
-  //   target.style.transition = "display 0.3s";
-  // };
+  const handleFadeDot = (e) => {
+    const fadingCrew = e.target.parentNode.parentNode.parentNode;
+    fadingCrew.classList.add("fade-for-me");
+    setTimeout(function () {
+      fadingCrew.classList.remove("fade-for-me");
+    }, 400);
+  };
+  const handleFadePointer = (e) => {
+    const fadingCrew = e.target.parentNode.previousSibling.children[1];
+    fadingCrew.classList.add("fade-for-me");
+    setTimeout(function () {
+      fadingCrew.classList.remove("fade-for-me");
+    }, 400);
+  };
 
   const handleIncrement = () => {
-    switch (increment) {
-      case 0:
-        setIncrement(increment + 1);
-        break;
-      case 1:
-        setIncrement(increment + 1);
-        break;
-      case 2:
-        setIncrement(increment + 1);
-        break;
-      default:
-        break;
-    }
-  };
-  const handleDecrement = () => {
-    switch (increment) {
-      case 1:
-        setIncrement(increment - 1);
-        break;
-      case 2:
-        setIncrement(increment - 1);
-        break;
-      case 3:
-        setIncrement(increment - 1);
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  const handleInterval = () => {
     switch (increment) {
       case 0:
         setIncrement(increment + 1);
@@ -68,10 +45,48 @@ const CrewsPage = () => {
         break;
     }
   };
+  const handleDecrement = () => {
+    switch (increment) {
+      case 1:
+        setIncrement(increment - 1);
+        break;
+      case 2:
+        setIncrement(increment - 1);
+        break;
+      case 3:
+        setIncrement(increment - 1);
+        break;
+      case 0:
+        setIncrement(3);
+        break;
 
-  const setIncrementDot = (n) => {
-    setIncrement(n);
+      default:
+        break;
+    }
   };
+
+  // const handleInterval = () => {
+  //   switch (increment) {
+  //     case 0:
+  //       setIncrement(increment + 1);
+  //       break;
+  //     case 1:
+  //       setIncrement(increment + 1);
+  //       break;
+  //     case 2:
+  //       setIncrement(increment + 1);
+  //       break;
+  //     case 3:
+  //       setIncrement(0);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
+
+  // const setIncrementDot = (n) => {
+  //   setIncrement(n);
+  // };
   const wrapperSetParentState = useCallback(
     (val) => {
       setIncrement(val);
@@ -79,27 +94,27 @@ const CrewsPage = () => {
     [setIncrement]
   );
 
-  const handleFade = (e) => {
-    const targetElement =
-      e.target.parentNode.previousSibling.children[1].children[1];
-    //     const keyFrames =
-    //       "\
-    // @keyframes move-eye {\
-    //   from {\
-    //     opacity: 0.4;\
-    //   }\
-    //   to {\
-    //     opacity: 1;\
-    //   }\
-    // }";
-    targetElement.style.opacity = "0";
-    // if (targetElement.style.opacity == "0") {
-    //   targetElement.style.opacity = "1";
-    setTimeout(function () {
-      targetElement.style.opacity = "1";
-    }, 500);
-    // }
-  };
+  // const handleFade = (e) => {
+  //   const targetElement =
+  //     e.target.parentNode.previousSibling.children[1].children[1];
+  //   //     const keyFrames =
+  //   //       "\
+  //   // @keyframes move-eye {\
+  //   //   from {\
+  //   //     opacity: 0.4;\
+  //   //   }\
+  //   //   to {\
+  //   //     opacity: 1;\
+  //   //   }\
+  //   // }";
+  //   targetElement.style.opacity = "0";
+  //   // if (targetElement.style.opacity == "0") {
+  //   //   targetElement.style.opacity = "1";
+  //   setTimeout(function () {
+  //     targetElement.style.opacity = "1";
+  //   }, 500);
+  //   // }
+  // };
 
   // const myInterval = setInterval(() => {
   //   handleInterval();
@@ -131,6 +146,7 @@ const CrewsPage = () => {
               data={crew}
               increment={increment}
               setIncrementDot={wrapperSetParentState}
+              handleFadeDot={handleFadeDot}
             />
           ))}
       </div>
@@ -139,7 +155,12 @@ const CrewsPage = () => {
           className="crews__pointer crews__pointer--left"
           onClick={(e) => {
             handleDecrement();
-            // handleFade(e);
+            handleFadePointer(e);
+            // if (increment == 0) {
+            //   e.target.style.display = "none";
+            // } else {
+            //   e.target.style.display = "block";
+            // }
             // stopInterval;
           }}
         >
@@ -149,7 +170,12 @@ const CrewsPage = () => {
           className="crews__pointer crews__pointer--right"
           onClick={(e) => {
             handleIncrement();
-            // handleFade(e);
+            handleFadePointer(e);
+            // if (increment == 3) {
+            //   e.target.style.visibility = "hidden";
+            // } else {
+            //   e.target.style.visibility = "visible";
+            // }
             // stopInterval;
           }}
         >

@@ -46,12 +46,12 @@ const Tech = ({ data }) => {
       </div>
       <img
         src={portrait}
-        alt="image"
+        alt="technology"
         className="tech__image tech__image--portrait"
       />
       <img
         src={landscape}
-        alt="image"
+        alt="technology"
         className="tech__image tech__image--landscape"
       />
     </div>

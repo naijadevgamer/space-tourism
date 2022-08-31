@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./crew.styles.scss";
 
-const Crew = ({ data, increment, setIncrementDot }) => {
+const Crew = ({ data, increment, setIncrementDot, handleFadeDot }) => {
   const {
     name,
     images: { webp },
@@ -30,23 +30,35 @@ const Crew = ({ data, increment, setIncrementDot }) => {
         <div className="crew__dot-container">
           <div
             className={`crew__dot ${increment === 0 ? "active" : ""}`}
-            onClick={() => onClickDot(0)}
+            onClick={(e) => {
+              onClickDot(0);
+              handleFadeDot(e);
+            }}
           ></div>
           <div
             className={`crew__dot ${increment === 1 ? "active" : ""}`}
-            onClick={() => onClickDot(1)}
+            onClick={(e) => {
+              onClickDot(1);
+              handleFadeDot(e);
+            }}
           ></div>
           <div
             className={`crew__dot ${increment === 2 ? "active" : ""}`}
-            onClick={() => onClickDot(2)}
+            onClick={(e) => {
+              onClickDot(2);
+              handleFadeDot(e);
+            }}
           ></div>
           <div
             className={`crew__dot ${increment === 3 ? "active" : ""}`}
-            onClick={() => onClickDot(3)}
+            onClick={(e) => {
+              onClickDot(3);
+              handleFadeDot(e);
+            }}
           ></div>
         </div>
       </div>
-      <img src={webp} alt="image" className="crew__image" />
+      <img src={webp} alt="crew" className="crew__image" />
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Destinations = ({ data }) => {
         Pick your destination
       </Subheader>
       <div className="destination__content">
-        <img src={png} alt="image" className="destination__image" />
+        <img src={png} alt="destination" className="destination__image" />
         <div className="destination__inner-content">
           <div className="destination__nav">
             <DestinationNavItem item={"Moon"} />
