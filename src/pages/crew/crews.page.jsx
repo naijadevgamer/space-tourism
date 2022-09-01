@@ -84,9 +84,6 @@ const CrewsPage = () => {
   //   }
   // };
 
-  // const setIncrementDot = (n) => {
-  //   setIncrement(n);
-  // };
   const wrapperSetParentState = useCallback(
     (val) => {
       setIncrement(val);
