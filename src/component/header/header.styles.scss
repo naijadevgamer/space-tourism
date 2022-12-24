@@ -15,13 +15,13 @@
   @include respond(tab-port) {
     top: 0;
   }
-  @include respond(phone) {
-    position: absolute;
-  }
+  // @include respond(phone) {
+  //   position: absolute;
+  // }
   &__logo-container {
     margin-right: auto;
     margin-left: 5.5rem;
-    @include respond(tab-port) {
+    @include respond(tab-land) {
       margin-left: 3.9rem;
     }
     @include respond(tab-port) {
@@ -154,14 +154,12 @@
 //////////////////////////Phone Nav///////////////////////
 .navigation {
   /////////////checkbox////////////
-  &__checkbox {
-    display: none;
-  }
   &__button {
     display: none;
     @include respond(phone) {
-      display: block;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 4rem;
       width: 4.8rem;
       position: fixed;
@@ -173,69 +171,32 @@
       transition: all 0.3s ease-in;
     }
   }
-
-  ///////////// functionalities//////////////////
-  &__checkbox:checked ~ .header__menu-container {
-    transform: translateX(0);
+  &__button:hover &__icon {
+    background-color: $color-white;
   }
-
   /////////////icon//////////////
   &__icon {
     display: none;
-    margin-top: calc(50% - 5px);
     @include respond(phone) {
-      &,
-      &::after,
-      &::before {
-        width: 100%;
-        height: 3px;
-        background-color: $color-secondary;
-        display: block;
-      }
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        transition: all 0.3s;
-      }
-      &::before {
-        top: 0;
-      }
-      &::after {
-        bottom: 0;
-      }
-      &:hover {
-        background-color: $color-white;
-      }
+      width: 100%;
+      height: 3px;
+      background-color: $color-secondary;
+      display: block;
     }
   }
-  // &__button:hover &__icon::before {
-  //   top: -1px;
-  // }
-  // &__button:hover &__icon {
-  //   width: 70%;
-  // }
-  // &__button:hover &__icon::after {
-  //   bottom: -1px;
-  // }
+
   &__checkbox:checked ~ &__button {
     height: 3.8rem;
     width: 4rem;
   }
-  &__checkbox:checked ~ &__button &__icon {
+  &__icon--2 {
     visibility: hidden;
   }
-  &__checkbox:checked ~ &__button &__icon::before {
-    top: 50%;
-    transform: translateY(-50%) rotate(315deg);
-    visibility: visible;
+  &__icon--1 {
+    transform: rotate(315deg);
   }
-  &__checkbox:checked ~ &__button &__icon::after {
-    bottom: 50%;
-    transform: translateY(50%) rotate(-315deg);
-    visibility: visible;
+  &__icon--3 {
+    transform: translateY(0) rotate(-315deg);
   }
 }
 
