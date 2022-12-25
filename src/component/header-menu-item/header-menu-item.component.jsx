@@ -8,7 +8,6 @@ const HeaderMenuItem = ({ num, name, link }) => {
 
   const handleUnchecked = (e) => {
     const checkBoxNam = e.target.parentNode.parentNode.parentNode.children[2];
-
     if (checkBoxNam.checked) {
       checkBoxNam.checked = false;
     }

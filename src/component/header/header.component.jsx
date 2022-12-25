@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import HeaderMenuItem from "../header-menu-item/header-menu-item.component";
 
@@ -36,30 +36,14 @@ const Header = () => {
           hidden ? "header__menu-container--hide" : ""
         }`}
       >
-        <HeaderMenuItem
-          num={"00"}
-          name={"Home"}
-          link={"/"}
-          onClick={toggleHidden}
-        />
+        <HeaderMenuItem num={"00"} name={"Home"} link={"/"} />
         <HeaderMenuItem
           num={"01"}
           name={"destination"}
           link={"/destination/Moon"}
-          onClick={toggleHidden}
         />
-        <HeaderMenuItem
-          num={"02"}
-          name={"Crews"}
-          link={"/crew"}
-          onClick={toggleHidden}
-        />
-        <HeaderMenuItem
-          num={"03"}
-          name={"technology"}
-          link={"/technology/0"}
-          onClick={toggleHidden}
-        />
+        <HeaderMenuItem num={"02"} name={"Crews"} link={"/crew"} />
+        <HeaderMenuItem num={"03"} name={"technology"} link={"/technology/0"} />
       </ul>
     </div>
   );

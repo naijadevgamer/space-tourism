@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 import "./tech.styles.scss";
 
@@ -11,6 +11,7 @@ const Tech = ({ data }) => {
   } = data;
   const location = useLocation().pathname;
   const navigate = useNavigate();
+  // console.log(useParams());
   return (
     <div className="tech">
       <ul className="tech__nav heading--4">
