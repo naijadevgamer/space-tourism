@@ -17,13 +17,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="destination" element={<DestinationPage />}>
-            <Route path=":name" element={<DestinationPage />} />
-          </Route>
-          <Route path="crew" element={<CrewsPage />} />
-          <Route path="technology" element={<TechnologyPage />}>
-            <Route path=":id" element={<TechnologyPage />} />
-          </Route>
+          <Route path="destination" element={<DestinationPage />} />
+          <Route path="crews" element={<CrewsPage />} />
+          <Route path="technology" element={<TechnologyPage />} />
         </Routes>
       </div>
     </Router>

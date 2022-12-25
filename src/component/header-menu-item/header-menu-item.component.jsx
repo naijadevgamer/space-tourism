@@ -3,34 +3,62 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./header-menu-item.styles.scss";
 
-const HeaderMenuItem = ({ num, name, link }) => {
+const HeaderMenuItems = ({ toggleHidden }) => {
   const location = useLocation().pathname;
 
-  const handleUnchecked = (e) => {
-    const checkBoxNam = e.target.parentNode.parentNode.parentNode.children[2];
-    if (checkBoxNam.checked) {
-      checkBoxNam.checked = false;
-    }
-  };
-
   return (
-    <li className="header__menu-item">
-      <Link
-        to={link}
-        className="header__menu-item-link"
-        onClick={handleUnchecked}
-      >
-        <span className="header__menu-number">{num}</span>
-        {name}
-      </Link>
-      <div
-        className={`${
-          location.includes(name) || location === link ? "menu-bottom-line" : ""
-        }`}
-      ></div>
-      <div id="hover"></div>
-    </li>
+    <>
+      <div className="header__menu-item">
+        <Link to="/" className="header__menu-item-link" onClick={toggleHidden}>
+          <span className="header__menu-number">01</span>Home
+        </Link>
+        <div className={`${location === "/" ? "menu-bottom-line" : ""}`}></div>
+        <div id="hover"></div>
+      </div>
+
+      <div className="header__menu-item">
+        <Link
+          to="/destination"
+          className="header__menu-item-link"
+          onClick={toggleHidden}
+        >
+          <span className="header__menu-number">02</span>Destination
+        </Link>
+        <div
+          className={`${location === "/destination" ? "menu-bottom-line" : ""}`}
+        ></div>
+        <div id="hover"></div>
+      </div>
+
+      <div className="header__menu-item">
+        <Link
+          to="/crews"
+          className="header__menu-item-link"
+          onClick={toggleHidden}
+        >
+          <span className="header__menu-number">03</span>Crews
+        </Link>
+        <div
+          className={`${location === "/crews" ? "menu-bottom-line" : ""}`}
+        ></div>
+        <div id="hover"></div>
+      </div>
+
+      <div className="header__menu-item">
+        <Link
+          to="/technology"
+          className="header__menu-item-link"
+          onClick={toggleHidden}
+        >
+          <span className="header__menu-number">04</span>Technology
+        </Link>
+        <div
+          className={`${location === "/technology" ? "menu-bottom-line" : ""}`}
+        ></div>
+        <div id="hover"></div>
+      </div>
+    </>
   );
 };
 
-export default HeaderMenuItem;
+export default HeaderMenuItems;

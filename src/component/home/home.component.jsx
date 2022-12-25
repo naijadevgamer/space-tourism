@@ -16,7 +16,7 @@ const Home = () => (
       </div>
     </div>
 
-    <Link to={"/destination/Moon"} className="home__explore heading--4">
+    <Link to={"/destination"} className="home__explore heading--4">
       Explore
       <div></div>
     </Link>
