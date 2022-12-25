@@ -62,8 +62,8 @@
     @include respond(phone) {
       overflow: hidden;
       width: 67%;
-      transform: translateX(100%);
-      transition: all 0.3s ease-in;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
       position: fixed;
       top: 0;
       right: 0;
@@ -75,6 +75,9 @@
       padding-right: 0;
       padding-top: 11.8rem;
       z-index: 5;
+      &--hide {
+        transform: translateX(100%);
+      }
     }
   }
 
@@ -152,7 +155,7 @@
 }
 
 //////////////////////////Phone Nav///////////////////////
-.navigation {
+.nav {
   /////////////checkbox////////////
   &__button {
     display: none;
@@ -168,7 +171,9 @@
       cursor: pointer;
       border-radius: 5px;
       overflow: hidden;
-      transition: all 0.3s ease-in;
+      &--cross {
+        height: 3.8rem;
+      }
     }
   }
   &__button:hover &__icon {
@@ -182,31 +187,28 @@
       height: 3px;
       background-color: $color-secondary;
       display: block;
+      transition: transform 0.3s ease, visibility 0.1s ease;
     }
   }
 
-  &__checkbox:checked ~ &__button {
-    height: 3.8rem;
-    width: 4rem;
-  }
   &__icon--2 {
     visibility: hidden;
   }
   &__icon--1 {
-    transform: rotate(315deg);
+    transform: translateY(1.7rem) rotate(315deg);
   }
   &__icon--3 {
-    transform: translateY(0) rotate(-315deg);
+    transform: translateY(-1.7rem) rotate(-315deg);
   }
 }
 
-.navigation__checkbox:checked + .overlay {
+.overlay {
   z-index: 3;
   width: 100vw;
   height: 100vh;
   position: fixed;
   backdrop-filter: blur(7px);
-  transition: backdrop-filter 0.3s ease-in;
+  // transition: backdrop-filter 0.3s ease-in;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0);
