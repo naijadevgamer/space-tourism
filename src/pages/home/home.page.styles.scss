@@ -3,6 +3,7 @@
 
 .home-page {
   // margin: 6rem;
+  overflow: auto;
   background-image: url(../../assets/home/background-home-desktop.jpg);
   @include background;
   @include respond(tab-port) {
@@ -10,87 +11,5 @@
   }
   @include respond(phone) {
     background-image: url(../../assets/home/background-home-mobile.jpg);
-  }
-}
-.home {
-  // margin: 38.7rem 16.5rem 13.1rem 16.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @include respond(tab-land) {
-    // margin: 30rem 11rem 10rem 10rem;
-  }
-  @include respond(tab-port) {
-    // margin: 20.2rem 0rem 11rem 0rem;
-    flex-direction: column;
-  }
-  @include respond(phone) {
-    // margin: 11.2rem 2.4rem 4.8rem 2.4rem;
-  }
-
-  &__heading-container {
-    width: 45rem;
-    margin-right: auto;
-    @include respond(tab-port) {
-      margin-right: 0;
-      text-align: center;
-      margin-bottom: 15.6rem;
-    }
-    @include respond(phone) {
-      max-width: 100%;
-      margin-bottom: 8.1rem;
-    }
-  }
-  &__heading {
-    margin-bottom: 1rem;
-    color: $color-secondary;
-  }
-  &__heading-big {
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: $color-white;
-  }
-  &__content {
-    color: $color-secondary;
-  }
-  &__explore {
-    height: 27.4rem;
-    width: 27.4rem;
-    text-decoration: none;
-    border-radius: 50%;
-    font-family: "Bellefair", serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(10%);
-    text-transform: uppercase;
-    position: relative;
-    background-color: $color-white;
-    color: $color-primary;
-    cursor: pointer;
-    z-index: 1;
-    @include respond(tab-port) {
-      transform: translateY(0);
-    }
-    @include respond(phone) {
-      height: 20rem;
-      width: 20rem;
-      font-size: 2rem !important;
-    }
-    & div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: white;
-      opacity: 0.1;
-      transform: scale(1);
-      transition: transform 0.3s ease-in-out;
-    }
-    &:hover > div {
-      transform: scale(1.39);
-    }
   }
 }

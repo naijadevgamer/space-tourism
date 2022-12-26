@@ -9,11 +9,11 @@ import DATA from "../../data";
 import "./destination.page.styles.scss";
 
 const DestinationPage = () => {
-  const destinationData = DATA.destinations;
+  const destData = DATA.destinations;
   let { name } = useParams();
   return (
     <div className="destination-page">
-      {destinationData
+      {destData
         .filter((destination, index) => {
           return name ? name === destination.name : index === 0;
         })

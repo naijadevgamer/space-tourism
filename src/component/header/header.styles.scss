@@ -203,13 +203,17 @@
 }
 
 .overlay {
-  z-index: 3;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  backdrop-filter: blur(7px);
-  // transition: backdrop-filter 0.3s ease-in;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0);
+  display: none;
+  @include respond(phone) {
+    display: block;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    backdrop-filter: blur(7px);
+    // transition: backdrop-filter 0.3s ease-in;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
