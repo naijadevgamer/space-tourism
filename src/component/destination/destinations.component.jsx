@@ -1,12 +1,12 @@
 import React from "react";
 
-import DestinationNavItem from "../destination-nav-item/dest-nav-item.component";
+import DestinationNavItems from "../destination-nav-item/dest-nav-item.component";
 import DestinationData from "../destination-data/dest-data.component";
 import Subheader from "../../component/subheader/subheader.component";
 
 import "./destinations.styles.scss";
 
-const Destinations = ({ data, setFilter, filter, handleFilter }) => {
+const Destinations = ({ data, setFilter, filter }) => {
   const {
     name,
     images: { png },
@@ -25,10 +25,7 @@ const Destinations = ({ data, setFilter, filter, handleFilter }) => {
         <img src={png} alt="destination" className="destination__image" />
         <div className="destination__inner-content">
           <div className="destination__nav">
-            <DestinationNavItem item={"Moon"} />
-            <DestinationNavItem item={"Mars"} />
-            <DestinationNavItem item={"Europa"} />
-            <DestinationNavItem item={"Titan"} />
+            <DestinationNavItems filter={filter} setFilter={setFilter} />
           </div>
           <h2 className="destination__name heading--2">{name}</h2>
           <p className="destination__description content">{description}</p>

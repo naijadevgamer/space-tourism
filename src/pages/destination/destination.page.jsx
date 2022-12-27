@@ -9,7 +9,6 @@ import "./destination.page.styles.scss";
 const DestinationPage = () => {
   const destData = DATA.destinations;
   const [filter, setFilter] = useState("Moon");
-  const handleFilter = () => {};
   return (
     <div className="destination-page">
       {destData
@@ -18,7 +17,6 @@ const DestinationPage = () => {
           <Destinations
             key={destination.id}
             data={destination}
-            handleFilter={handleFilter}
             filter={filter}
             setFilter={setFilter}
           />
