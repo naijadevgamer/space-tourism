@@ -1,41 +1,41 @@
 import React from "react";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 import "./tech.styles.scss";
 
-const Tech = ({ data }) => {
+const Tech = ({ techData, filter, setFilter }) => {
   const {
     name,
     description,
     images: { portrait, landscape },
-  } = data;
-  const location = useLocation().pathname;
-  const navigate = useNavigate();
-  // console.log(useParams());
+  } = techData;
+
+  const handleTech0 = () => {
+    setFilter(0);
+  };
+  const handleTech1 = () => {
+    setFilter(1);
+  };
+  const handleTech2 = () => {
+    setFilter(2);
+  };
   return (
     <div className="tech">
       <ul className="tech__nav heading--4">
         <li
-          className={`tech__nav-item ${
-            location.includes("0") ? "tech__nav-item-a" : ""
-          }`}
-          onClick={() => navigate("/technology/0")}
+          className={`tech__nav-item ${filter === 0 ? "tech__nav-item-a" : ""}`}
+          onClick={handleTech0}
         >
           1
         </li>
         <li
-          className={`tech__nav-item ${
-            location.includes("1") ? "tech__nav-item-a" : ""
-          }`}
-          onClick={() => navigate("/technology/1")}
+          className={`tech__nav-item ${filter === 1 ? "tech__nav-item-a" : ""}`}
+          onClick={handleTech1}
         >
           2
         </li>
         <li
-          className={`tech__nav-item ${
-            location.includes("2") ? "tech__nav-item-a" : ""
-          }`}
-          onClick={() => navigate("/technology/2")}
+          className={`tech__nav-item ${filter === 2 ? "tech__nav-item-a" : ""}`}
+          onClick={handleTech2}
         >
           3
         </li>
