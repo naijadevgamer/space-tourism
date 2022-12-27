@@ -32,14 +32,17 @@
   &__heading {
     margin-bottom: 1rem;
     color: $color-secondary;
+    animation: fromLeft 1s ease-out;
   }
   &__heading-big {
     margin-bottom: 1rem;
     text-transform: uppercase;
     color: $color-white;
+    animation: fromRight 1s ease-out;
   }
   &__content {
     color: $color-secondary;
+    animation: fromBottom 1s ease-out 1s backwards;
   }
   &__explore {
     animation: flicker 1s linear, faultyFlicker 1s ease-in-out;
@@ -81,6 +84,45 @@
       transform: scale(1.39);
       transition: transform 0.3s;
     }
+  }
+}
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
 

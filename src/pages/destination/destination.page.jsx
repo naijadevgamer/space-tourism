@@ -1,6 +1,4 @@
-import React from "react";
-
-import { useParams } from "react-router";
+import React, { useState } from "react";
 
 import Destinations from "../../component/destination/destinations.component";
 
@@ -10,15 +8,20 @@ import "./destination.page.styles.scss";
 
 const DestinationPage = () => {
   const destData = DATA.destinations;
-  let { name } = useParams();
+  const [filter, setFilter] = useState("Moon");
+  const handleFilter = () => {};
   return (
     <div className="destination-page">
       {destData
-        .filter((destination, index) => {
-          return name ? name === destination.name : index === 0;
-        })
+        .filter((destination) => filter === destination.name)
         .map((destination) => (
-          <Destinations key={destination.id} data={destination} />
+          <Destinations
+            key={destination.id}
+            data={destination}
+            handleFilter={handleFilter}
+            filter={filter}
+            setFilter={setFilter}
+          />
         ))}
     </div>
   );

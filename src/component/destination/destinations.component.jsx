@@ -6,7 +6,7 @@ import Subheader from "../../component/subheader/subheader.component";
 
 import "./destinations.styles.scss";
 
-const Destinations = ({ data }) => {
+const Destinations = ({ data, setFilter, filter, handleFilter }) => {
   const {
     name,
     images: { png },
