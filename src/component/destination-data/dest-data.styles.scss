@@ -3,11 +3,13 @@
 
 .destination {
   &__data {
+    animation: show 1s ease-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
     @include respond(tab-port) {
       justify-content: space-evenly;
+      animation: fromBottom 1s ease-out;
     }
     @include respond(phone) {
       flex-direction: column;

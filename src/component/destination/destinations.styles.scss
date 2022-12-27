@@ -29,6 +29,7 @@
   &__image {
     width: 44.5rem;
     margin-right: 5rem;
+    animation: rotate 10s linear infinite;
     @include respond(tab-land) {
       width: 48%;
     }
@@ -69,12 +70,14 @@
 
   &__name {
     margin-bottom: 4rem;
+    animation: fromRight 1s ease-out;
     @include respond(phone) {
       margin-bottom: 1.4rem;
     }
   }
 
   &__description {
+    animation: fromRight 1s ease-out;
     font-size: 18px;
     color: $color-secondary;
     margin-bottom: 7rem;
