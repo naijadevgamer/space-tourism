@@ -132,12 +132,8 @@ const CrewsPage = () => {
           <span className="subheader__number">02</span>
           Meet your crew
         </Subheader>
-
-        {crewData
-          .filter((crew) => {
-            return crew.id === increment;
-          })
-          .map((crew, index) => (
+        <div className="crews__list">
+          {crewData.map((crew, index) => (
             <Crew
               key={index}
               data={crew}
@@ -146,6 +142,7 @@ const CrewsPage = () => {
               handleFadeDot={handleFadeDot}
             />
           ))}
+        </div>
       </div>
       <div className="crews__pointer-wrapper">
         <div
@@ -153,12 +150,6 @@ const CrewsPage = () => {
           onClick={(e) => {
             handleDecrement();
             handleFadePointer(e);
-            // if (increment == 0) {
-            //   e.target.style.display = "none";
-            // } else {
-            //   e.target.style.display = "block";
-            // }
-            // stopInterval;
           }}
         >
           &#10094;
@@ -168,12 +159,6 @@ const CrewsPage = () => {
           onClick={(e) => {
             handleIncrement();
             handleFadePointer(e);
-            // if (increment == 3) {
-            //   e.target.style.visibility = "hidden";
-            // } else {
-            //   e.target.style.visibility = "visible";
-            // }
-            // stopInterval;
           }}
         >
           &#10095;
