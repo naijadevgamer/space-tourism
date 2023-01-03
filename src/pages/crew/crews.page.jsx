@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useCallback } from "react";
+import "@glidejs/glide/src/assets/sass/glide.core.scss";
+import glide from "@glidejs/glide";
 
 import Subheader from "../../component/subheader/subheader.component";
 import Crew from "../../component/crew/crew.components";
@@ -9,6 +11,7 @@ import DATA from "../../data";
 import "./crews.page.styles.scss";
 
 const CrewsPage = () => {
+  new Glide(".glide").mount();
   const crewData = DATA.crew;
   const [increment, setIncrement] = useState(0);
 
@@ -65,65 +68,12 @@ const CrewsPage = () => {
     }
   };
 
-  // const handleInterval = () => {
-  //   switch (increment) {
-  //     case 0:
-  //       setIncrement(increment + 1);
-  //       break;
-  //     case 1:
-  //       setIncrement(increment + 1);
-  //       break;
-  //     case 2:
-  //       setIncrement(increment + 1);
-  //       break;
-  //     case 3:
-  //       setIncrement(0);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
   const wrapperSetParentState = useCallback(
     (val) => {
       setIncrement(val);
     },
     [setIncrement]
   );
-
-  // const handleFade = (e) => {
-  //   const targetElement =
-  //     e.target.parentNode.previousSibling.children[1].children[1];
-  //   //     const keyFrames =
-  //   //       "\
-  //   // @keyframes move-eye {\
-  //   //   from {\
-  //   //     opacity: 0.4;\
-  //   //   }\
-  //   //   to {\
-  //   //     opacity: 1;\
-  //   //   }\
-  //   // }";
-  //   targetElement.style.opacity = "0";
-  //   // if (targetElement.style.opacity == "0") {
-  //   //   targetElement.style.opacity = "1";
-  //   setTimeout(function () {
-  //     targetElement.style.opacity = "1";
-  //   }, 500);
-  //   // }
-  // };
-
-  // const myInterval = setInterval(() => {
-  //   handleInterval();
-  // }, 10000);
-
-  // const stopInterval = useEffect(() => {
-  //   clearInterval(myInterval);
-  // }, [myInterval]);
-
-  // const handleDots = (n) => {
-  //   setIncrement(n);
-  // };
 
   return (
     <>
@@ -132,7 +82,7 @@ const CrewsPage = () => {
           <span className="subheader__number">02</span>
           Meet your crew
         </Subheader>
-        <div className="crews__list">
+        <div className="crews__list" data-glide-el="track">
           {crewData.map((crew, index) => (
             <Crew
               key={index}
