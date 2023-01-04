@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "@glidejs/glide/src/assets/sass/glide.core.scss";
 import "@glidejs/glide/src/assets/sass/glide.theme.scss";
-import glide, { Controls, Breakpoints } from "@glidejs/glide";
+import glide from "@glidejs/glide";
 
 import Subheader from "../../component/subheader/subheader.component";
 import Crew from "../../component/crew/crew.components";
@@ -9,13 +9,14 @@ import Crew from "../../component/crew/crew.components";
 import DATA from "../../data";
 
 import "./crews.page.styles.scss";
-new glide(".glide", {
-  perView: 3,
-  type: "carousel",
-}).mount();
 
 const CrewsPage = () => {
-  // let glided;
+  useEffect(() => {
+    new glide(".glide", {
+      perView: 1,
+      type: "carousel",
+    }).mount();
+  }, []);
 
   // useEffect(() => {
   //   // setData();
