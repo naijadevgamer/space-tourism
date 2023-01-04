@@ -1,7 +1,7 @@
-import React from "react";
-import { useState, useCallback } from "react";
+import React, { useEffect } from "react";
 import "@glidejs/glide/src/assets/sass/glide.core.scss";
-import glide from "@glidejs/glide";
+import "@glidejs/glide/src/assets/sass/glide.theme.scss";
+import glide, { Controls, Breakpoints } from "@glidejs/glide";
 
 import Subheader from "../../component/subheader/subheader.component";
 import Crew from "../../component/crew/crew.components";
@@ -9,107 +9,52 @@ import Crew from "../../component/crew/crew.components";
 import DATA from "../../data";
 
 import "./crews.page.styles.scss";
+new glide(".glide", {
+  perView: 3,
+  type: "carousel",
+}).mount();
 
 const CrewsPage = () => {
-  new Glide(".glide").mount();
+  // let glided;
+
+  // useEffect(() => {
+  //   // setData();
+  //   new glide(".glide", {
+  //     perView: 1,
+  //     type: "carousel",
+  //   });
+  // }, []);
+  // const setData = glided.mount();
   const crewData = DATA.crew;
-  const [increment, setIncrement] = useState(0);
-
-  const handleFadeDot = (e) => {
-    const fadingCrew = e.target.parentNode.parentNode.parentNode;
-    fadingCrew.classList.add("fade-for-me");
-    setTimeout(function () {
-      fadingCrew.classList.remove("fade-for-me");
-    }, 400);
-  };
-  const handleFadePointer = (e) => {
-    const fadingCrew = e.target.parentNode.previousSibling.children[1];
-    fadingCrew.classList.add("fade-for-me");
-    setTimeout(function () {
-      fadingCrew.classList.remove("fade-for-me");
-    }, 400);
-  };
-
-  const handleIncrement = () => {
-    switch (increment) {
-      case 0:
-        setIncrement(increment + 1);
-        break;
-      case 1:
-        setIncrement(increment + 1);
-        break;
-      case 2:
-        setIncrement(increment + 1);
-        break;
-      case 3:
-        setIncrement(0);
-        break;
-      default:
-        break;
-    }
-  };
-  const handleDecrement = () => {
-    switch (increment) {
-      case 1:
-        setIncrement(increment - 1);
-        break;
-      case 2:
-        setIncrement(increment - 1);
-        break;
-      case 3:
-        setIncrement(increment - 1);
-        break;
-      case 0:
-        setIncrement(3);
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  const wrapperSetParentState = useCallback(
-    (val) => {
-      setIncrement(val);
-    },
-    [setIncrement]
-  );
 
   return (
     <>
-      <div className="crews-page">
+      <div className="crews-page glide">
         <Subheader>
           <span className="subheader__number">02</span>
           Meet your crew
         </Subheader>
-        <div className="crews__list" data-glide-el="track">
-          {crewData.map((crew, index) => (
-            <Crew
-              key={index}
-              data={crew}
-              increment={increment}
-              setIncrementDot={wrapperSetParentState}
-              handleFadeDot={handleFadeDot}
-            />
-          ))}
+        <div className="crews__list glide__track" data-glide-el="track">
+          <ul className="glide__slides">
+            {crewData.map((crew, index) => (
+              <Crew key={index} data={crew} />
+            ))}
+          </ul>
         </div>
       </div>
-      <div className="crews__pointer-wrapper">
+      <div
+        className="crews__pointer-wrapper glide__arrows"
+        data-glide-el="controls"
+      >
         <div
-          className="crews__pointer crews__pointer--left"
-          onClick={(e) => {
-            handleDecrement();
-            handleFadePointer(e);
-          }}
+          className="crews__pointer crews__pointer--left glide__arrow glide__arrow--left"
+          data-glide-dir="<"
         >
           &#10094;
         </div>
         <div
-          className="crews__pointer crews__pointer--right"
-          onClick={(e) => {
-            handleIncrement();
-            handleFadePointer(e);
-          }}
+          className="crews__pointer crews__pointer--right glide__arrow glide__arrow--right"
+          data-glide-dir=">"
         >
           &#10095;
         </div>
