@@ -15,27 +15,20 @@ const CrewsPage = () => {
     new glide(".glide", {
       perView: 1,
       type: "carousel",
+      gap: 200,
     }).mount();
   }, []);
 
-  // useEffect(() => {
-  //   // setData();
-  //   new glide(".glide", {
-  //     perView: 1,
-  //     type: "carousel",
-  //   });
-  // }, []);
-  // const setData = glided.mount();
   const crewData = DATA.crew;
 
   return (
     <>
-      <div className="crews-page glide">
+      <div className="glide">
         <Subheader>
           <span className="subheader__number">02</span>
           Meet your crew
         </Subheader>
-        <div className="crews__list glide__track" data-glide-el="track">
+        <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
             {crewData.map((crew, index) => (
               <Crew key={index} data={crew} />
@@ -43,20 +36,11 @@ const CrewsPage = () => {
           </ul>
         </div>
       </div>
-      <div
-        className="crews__pointer-wrapper glide__arrows"
-        data-glide-el="controls"
-      >
-        <div
-          className="crews__pointer crews__pointer--left glide__arrow glide__arrow--left"
-          data-glide-dir="<"
-        >
+      <div className="glide__arrows" data-glide-el="controls">
+        <div className="glide__arrow glide__arrow--left" data-glide-dir="<">
           &#10094;
         </div>
-        <div
-          className="crews__pointer crews__pointer--right glide__arrow glide__arrow--right"
-          data-glide-dir=">"
-        >
+        <div className="glide__arrow glide__arrow--right" data-glide-dir=">">
           &#10095;
         </div>
       </div>

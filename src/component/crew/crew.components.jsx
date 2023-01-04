@@ -10,34 +10,19 @@ const Crew = ({ data }) => {
   } = data;
 
   return (
-    <li className="crew glide__slide">
-      <div className="crew__content">
-        <h4 className="crew__role heading--4">{role}</h4>
-        <h3 className="crew__name heading--3">{name}</h3>
-        <p className="crew__bio content">{bio}</p>
-        <div
-          className="crew__dot-container glide__bullets"
-          data-glide-el="controls[nav]"
-        >
-          <button
-            className="crew__dot glide__bullet"
-            data-glide-dir="=0"
-          ></button>
-          <button
-            className="crew__dot glide__bullet"
-            data-glide-dir="=1"
-          ></button>
-          <button
-            className="crew__dot glide__bullet"
-            data-glide-dir="=2"
-          ></button>
-          <button
-            className="crew__dot glide__bullet"
-            data-glide-dir="=3"
-          ></button>
+    <li className="glide__slide">
+      <div className="glide__content">
+        <h4 className="glide__role heading--4">{role}</h4>
+        <h3 className="glide__name heading--3">{name}</h3>
+        <p className="glide__bio content">{bio}</p>
+        <div className="glide__bullets" data-glide-el="controls[nav]">
+          <button className="glide__bullet" data-glide-dir="=0"></button>
+          <button className="glide__bullet" data-glide-dir="=1"></button>
+          <button className="glide__bullet" data-glide-dir="=2"></button>
+          <button className="glide__bullet" data-glide-dir="=3"></button>
         </div>
       </div>
-      <img src={webp} alt="crew" className="crew__image" />
+      <img src={webp} alt="crew" className="glide__image" />
     </li>
   );
 };

@@ -1,11 +1,11 @@
 @import "../../mixin";
 @import "../../typography&variables";
 
-.crews-page {
+.glide {
   color: $color-white;
   background-image: url(../../assets/crew/background-crew-desktop.jpg);
-  padding: 21.2rem 16.5rem 0rem 16.5rem;
   @include background;
+  padding: 21.2rem 16.5rem 0rem 16.5rem;
   overflow: auto;
 
   @include respond(tab-land) {
@@ -19,15 +19,15 @@
     padding: 88px 2.4rem 0rem 2.4rem;
     background-image: url(../../assets/crew/background-crew-mobile.jpg);
   }
-}
-.crews {
-  width: 100vw;
-  position: relative;
-  // &__list {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-  &__pointer-wrapper {
+
+  &__track {
+    // width: 100%;
+    overflow: visible;
+    position: relative;
+  }
+  &__slides {
+  }
+  &__arrows {
     position: fixed;
     bottom: 50%;
     transform: translateY(50%);
@@ -39,7 +39,7 @@
       display: none;
     }
   }
-  &__pointer {
+  &__arrow {
     color: white;
     opacity: 0;
     font-size: 8rem;
