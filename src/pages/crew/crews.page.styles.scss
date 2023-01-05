@@ -25,15 +25,14 @@
     overflow: visible;
     position: relative;
   }
-  &__slides {
-  }
+  // &__slides {
+  // }
   &__arrows {
     position: fixed;
     bottom: 50%;
     transform: translateY(50%);
     width: 100%;
     display: flex;
-    // display: none;
     justify-content: space-between;
     @include respond(phone) {
       display: none;
@@ -47,7 +46,7 @@
     height: 100vh;
     width: 20vw;
     display: flex;
-    display: none;
+    // display: none;
     align-items: center;
     cursor: pointer;
 
@@ -65,7 +64,6 @@
       display: flex;
       justify-content: flex-end;
       margin-right: 2rem;
-      display: none;
     }
   }
 }

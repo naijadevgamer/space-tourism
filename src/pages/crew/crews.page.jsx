@@ -18,7 +18,11 @@ const CrewsPage = () => {
       gap: 200,
     }).mount();
   }, []);
-
+  // setInterval(() => {
+  //   new glide(".glide", {
+  //     autoplay: true,
+  //   }).mount();
+  // }, 10000);
   const crewData = DATA.crew;
 
   return (
