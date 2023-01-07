@@ -18,20 +18,15 @@ const CrewsPage = () => {
       gap: 200,
     }).mount();
   }, []);
-  // setInterval(() => {
-  //   new glide(".glide", {
-  //     autoplay: true,
-  //   }).mount();
-  // }, 10000);
   const crewData = DATA.crew;
 
   return (
-    <>
+    <div className="crew-page">
+      <Subheader>
+        <span className="subheader__number">02</span>
+        Meet your crew
+      </Subheader>
       <div className="glide">
-        <Subheader>
-          <span className="subheader__number">02</span>
-          Meet your crew
-        </Subheader>
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
             {crewData.map((crew, index) => (
@@ -48,7 +43,7 @@ const CrewsPage = () => {
           &#10095;
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

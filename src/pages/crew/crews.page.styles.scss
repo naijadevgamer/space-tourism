@@ -1,12 +1,10 @@
 @import "../../mixin";
 @import "../../typography&variables";
 
-.glide {
+.crew-page {
   color: $color-white;
   background-image: url(../../assets/crew/background-crew-desktop.jpg);
   @include background;
-  padding: 21.2rem 16.5rem 0rem 16.5rem;
-  overflow: auto;
 
   @include respond(tab-land) {
     padding: 21.2rem 6rem 0rem 10rem;
@@ -19,14 +17,16 @@
     padding: 88px 2.4rem 0rem 2.4rem;
     background-image: url(../../assets/crew/background-crew-mobile.jpg);
   }
-
+}
+.glide {
+  margin: 21.2rem 16.5rem 0rem 16.5rem;
   &__track {
     // width: 100%;
-    overflow: visible;
-    position: relative;
+    // overflow: visible;
+    // position: relative;
   }
-  // &__slides {
-  // }
+  &__slides {
+  }
   &__arrows {
     position: fixed;
     bottom: 50%;
