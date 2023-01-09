@@ -21,18 +21,23 @@ const CrewsPage = () => {
   const crewData = DATA.crew;
 
   return (
-    <div className="crew-page">
-      <Subheader>
-        <span className="subheader__number">02</span>
-        Meet your crew
-      </Subheader>
-      <div className="glide">
-        <div className="glide__track" data-glide-el="track">
-          <ul className="glide__slides">
-            {crewData.map((crew, index) => (
-              <Crew key={index} data={crew} />
-            ))}
-          </ul>
+    <>
+      <div className="crew-page">
+        <div className="sub-header">
+          <Subheader>
+            <span className="subheader__number">02</span>
+            Meet your crew
+          </Subheader>
+        </div>
+
+        <div className="glide">
+          <div className="glide__track" data-glide-el="track">
+            <ul className="glide__slides">
+              {crewData.map((crew, index) => (
+                <Crew key={index} data={crew} />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="glide__arrows" data-glide-el="controls">
@@ -43,7 +48,7 @@ const CrewsPage = () => {
           &#10095;
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
