@@ -3,11 +3,14 @@
 
 .glide {
   &__slide {
-    row-gap: 10rem;
     position: relative;
     display: flex;
+    align-items: center;
     margin-right: 2rem;
     margin-left: 16.5rem;
+    @include respond(tab-land) {
+      margin-left: 10rem;
+    }
     @include respond(tab-port) {
       flex-direction: column;
       align-items: center;
@@ -29,6 +32,7 @@
   }
   &__content {
     width: 50%;
+
     @include respond(tab-port) {
       width: 45.8rem;
       text-align: center;
@@ -107,8 +111,9 @@
     margin-right: 20rem;
     transition: all 0.5s;
     @include respond(tab-land) {
-      margin-right: 0;
+      // margin-right: 0;
       width: 50%;
+      height: 65rem;
       border-bottom: 1px solid rgba($color-white, 0.25);
     }
     @include respond(tab-port) {

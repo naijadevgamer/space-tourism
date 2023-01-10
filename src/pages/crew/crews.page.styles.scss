@@ -8,7 +8,7 @@
   overflow: auto;
   // padding: 21.2rem 16.5rem 0rem 16.5rem;
   @include respond(tab-land) {
-    padding: 21.2rem 6rem 0rem 10rem;
+    // padding: 21.2rem 6rem 0rem 10rem;
   }
   @include respond(tab-port) {
     padding: 13.6rem 3.85rem 0rem 3.85rem;
@@ -21,6 +21,13 @@
   .sub-header {
     margin-top: 21.2rem;
     margin-left: 16.5rem;
+    @include respond(tab-land) {
+      margin-left: 10rem;
+    }
+    @include respond(tab-port) {
+    }
+    @include respond(phone) {
+    }
   }
 }
 .glide {
