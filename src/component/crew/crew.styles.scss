@@ -14,6 +14,7 @@
     @include respond(tab-port) {
       flex-direction: column;
       align-items: center;
+      margin: 0 auto;
     }
   }
 
@@ -21,7 +22,7 @@
     margin: 15.4rem 0 1.5rem 0;
     opacity: 0.5;
     @include respond(tab-land) {
-      margin-top: 20rem;
+      margin-top: 10rem;
       margin-bottom: 0.8rem;
     }
     @include respond(phone) {
@@ -32,6 +33,7 @@
   }
   &__content {
     width: 50%;
+    animation: fromBottom 1s ease-out;
 
     @include respond(tab-port) {
       width: 45.8rem;
@@ -111,18 +113,21 @@
     margin-right: 20rem;
     transition: all 0.5s;
     @include respond(tab-land) {
-      // margin-right: 0;
+      margin-right: 10rem;
       width: 50%;
-      height: 65rem;
+      height: auto;
       border-bottom: 1px solid rgba($color-white, 0.25);
     }
     @include respond(tab-port) {
+      margin-right: 0;
       width: 45.8rem;
       margin-bottom: -4rem;
     }
     @include respond(phone) {
+      animation: show 1s ease-out;
       order: 1;
       width: 100%;
+      height: 50vw;
       padding: 0 30%;
       display: block;
       margin: 3.6rem 0;
