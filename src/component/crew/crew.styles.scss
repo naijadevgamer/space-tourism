@@ -34,7 +34,9 @@
   &__content {
     width: 50%;
     animation: fromBottom 1s ease-out;
-
+    @include respond(tab-land) {
+      width: 40%;
+    }
     @include respond(tab-port) {
       width: 45.8rem;
       text-align: center;
@@ -112,10 +114,11 @@
     height: 70rem;
     margin-right: 20rem;
     transition: all 0.5s;
+    animation: show 1s ease-out;
     @include respond(tab-land) {
       margin-right: 10rem;
       width: 50%;
-      height: auto;
+      height: 60vw;
       border-bottom: 1px solid rgba($color-white, 0.25);
     }
     @include respond(tab-port) {
@@ -124,7 +127,6 @@
       margin-bottom: -4rem;
     }
     @include respond(phone) {
-      animation: show 1s ease-out;
       order: 1;
       width: 100%;
       height: 50vw;

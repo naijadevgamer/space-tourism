@@ -34,11 +34,16 @@
   }
 }
 .glide {
+  cursor: grab;
   &__arrows {
-    position: fixed;
+    position: absolute;
+    // background-color: red;
+    // height: 20rem !important;
     bottom: 50%;
+    left: 0;
     transform: translateY(50%);
-    width: 100%;
+    width: 100vw;
+    // z-index: -1;
     display: flex;
     justify-content: space-between;
     @include respond(phone) {
@@ -46,13 +51,18 @@
     }
   }
   &__arrow {
+    position: fixed;
     color: white;
     opacity: 0;
     font-size: 8rem;
+    z-index: 3;
     line-height: 0.8;
     height: 100vh;
     width: 20vw;
-    display: flex;
+    bottom: 50%;
+
+    transform: translateY(50%);
+    // display: flex;
     // display: none;
     align-items: center;
     cursor: pointer;
@@ -65,12 +75,14 @@
       }
     }
     &--left {
-      margin-left: 2rem;
+      left: 0;
+      // margin-left: 2rem;
     }
     &--right {
+      right: 0;
       display: flex;
       justify-content: flex-end;
-      margin-right: 2rem;
+      // margin-right: 2rem;
     }
   }
 }

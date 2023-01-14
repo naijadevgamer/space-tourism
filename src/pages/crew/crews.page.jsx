@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "@glidejs/glide/src/assets/sass/glide.core.scss";
-import "@glidejs/glide/src/assets/sass/glide.theme.scss";
+// import "@glidejs/glide/src/assets/sass/glide.theme.scss";
 import glide from "@glidejs/glide";
 
 import Subheader from "../../component/subheader/subheader.component";
@@ -11,14 +11,15 @@ import DATA from "../../data";
 import "./crews.page.styles.scss";
 
 const CrewsPage = () => {
+  const crewData = DATA.crew;
   useEffect(() => {
     new glide(".glide", {
       perView: 1,
       type: "carousel",
       gap: 200,
+      autoplay: 5000,
     }).mount();
   }, []);
-  const crewData = DATA.crew;
 
   return (
     <>
@@ -38,14 +39,14 @@ const CrewsPage = () => {
               ))}
             </ul>
           </div>
-        </div>
-      </div>
-      <div className="glide__arrows" data-glide-el="controls">
-        <div className="glide__arrow glide__arrow--left" data-glide-dir="<">
-          &#10094;
-        </div>
-        <div className="glide__arrow glide__arrow--right" data-glide-dir=">">
-          &#10095;
+          {/* <div className="glide__arrows" data-glide-el="controls"> */}
+          {/* <div className="glide__arrow glide__arrow--left" data-glide-dir="<">
+            &#10094;
+          </div>
+          <div className="glide__arrow glide__arrow--right" data-glide-dir=">">
+            &#10095;
+          </div> */}
+          {/* </div> */}
         </div>
       </div>
     </>
