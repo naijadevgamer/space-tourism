@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "@glidejs/glide/src/assets/sass/glide.core.scss";
-// import "@glidejs/glide/src/assets/sass/glide.theme.scss";
+import "@glidejs/glide/src/assets/sass/glide.theme.scss";
 import glide from "@glidejs/glide";
 
 import Subheader from "../../component/subheader/subheader.component";
@@ -17,7 +17,7 @@ const CrewsPage = () => {
       perView: 1,
       type: "carousel",
       gap: 200,
-      autoplay: 5000,
+      autoplay: 3000,
     }).mount();
   }, []);
 
