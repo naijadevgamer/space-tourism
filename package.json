@@ -2,7 +2,7 @@
   "name": "space-tourism-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https//:thenaijagamer.github.io/space-tourism",
+  "homepage": "https://thenaijagamer.github.io/space-tourism",
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
     "@testing-library/jest-dom": "^5.16.4",
