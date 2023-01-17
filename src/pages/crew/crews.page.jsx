@@ -16,8 +16,7 @@ const CrewsPage = () => {
     new glide(".glide", {
       perView: 1,
       type: "carousel",
-      // gap: 200,
-      // autoplay: 3000,
+      autoplay: 3000,
     }).mount();
   }, []);
 
