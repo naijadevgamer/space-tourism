@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./app.png)
+![](./public/app.png)
 
 ### Links
 
@@ -35,6 +35,7 @@ Users should be able to:
 - [Live site](https://naijadevgamer.github.io/space-tourism/)
 
 ## My process
+
 A sleek and interactive space tourism website featuring a responsive layout and dynamic content navigation. 🚀✨ Users can explore destinations with smooth transitions and a carousel for an engaging experience. 🌌🛰️
 
 ### Built with
